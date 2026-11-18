@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dr. Ines Carrato MD – Segreteria Eventi</title>
   <meta name="description" content="Segreteria eventi della Dr. Ines Carrato: organizzazione di congressi, corsi e incontri.">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
   <!-- NAVIGAZIONE -->
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <img src="assets/stemma.png" alt="" class="brand-logo">
         <span class="brand-name">Dr. Ines Carrato</span>
         <span class="brand-sep"></span>
@@ -27,120 +28,29 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav-links">
-        <a href="#chi-siamo">Chi siamo</a>
-        <a href="#eventi">Eventi</a>
-        <a href="#contatti">Contatti</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="contatti.html">Contatti</a>
       </nav>
     </div>
   </header>
 
+  <main>
   <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero hero-home" id="top">
     <div class="container hero-inner">
       <h1 class="hero-logo-wrap">
         <img src="assets/logo-drinescarrato.jpg" alt="Dr. Ines Carrato MD – Segreteria Eventi" class="hero-logo-img" width="860" height="770">
       </h1>
       <p class="hero-text">[Una frase che presenta la segreteria e il tipo di eventi organizzati]</p>
       <div class="hero-buttons">
-        <a href="#eventi" class="btn btn-cream">Prossimi eventi</a>
-        <a href="#contatti" class="btn btn-outline-light">Contattaci</a>
+        <a href="eventi.html" class="btn btn-cream">Prossimi eventi</a>
+        <a href="contatti.html" class="btn btn-outline-light">Contattaci</a>
       </div>
     </div>
   </section>
 
-  <!-- CHI SIAMO -->
-  <section class="section about" id="chi-siamo">
-    <div class="container about-inner">
-      <div class="photo">
-        <img src="assets/foto-carrato.jpg" alt="Dr. Ines Carrato" width="900" height="900" loading="lazy">
-      </div>
-      <div class="about-text">
-        <p class="eyebrow">Chi siamo</p>
-        <h2>La segreteria eventi della Dr. Ines Carrato</h2>
-        <div class="rule"></div>
-        <p>[Breve presentazione della Dr. Carrato: formazione, specializzazione, percorso professionale.]</p>
-        <p>[Che cosa fa la segreteria: organizzazione di congressi, corsi, incontri, servizi offerti a partecipanti e relatori.]</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTI -->
-  <section class="section events" id="eventi">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Calendario</p>
-        <h2>Prossimi eventi</h2>
-        <div class="rule center"></div>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="card-date">[Data]</div>
-          <div class="card-body">
-            <h3>[Titolo dell'evento]</h3>
-            <p class="card-place">[Luogo · Città]</p>
-            <p>[Breve descrizione dell'evento]</p>
-            <a href="#contatti" class="btn btn-outline">Iscriviti</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-date">[Data]</div>
-          <div class="card-body">
-            <h3>[Titolo dell'evento]</h3>
-            <p class="card-place">[Luogo · Città]</p>
-            <p>[Breve descrizione dell'evento]</p>
-            <a href="#contatti" class="btn btn-outline">Iscriviti</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-date">[Data]</div>
-          <div class="card-body">
-            <h3>[Titolo dell'evento]</h3>
-            <p class="card-place">[Luogo · Città]</p>
-            <p>[Breve descrizione dell'evento]</p>
-            <a href="#contatti" class="btn btn-outline">Iscriviti</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATTI -->
-  <section class="section contact" id="contatti">
-    <div class="container contact-inner">
-      <div class="contact-info">
-        <p class="eyebrow">Contatti</p>
-        <h2>Scrivi alla segreteria</h2>
-        <div class="rule"></div>
-        <p>Email: <a href="mailto:segreteria.eventi.dr.ines.c@gmail.com">[segreteria.eventi.dr.ines.c@gmail.com]</a></p>
-        <p>Telefono: <a href="tel:+390000000000">[+393318053227]</a></p>
-        <p>Indirizzo: [indirizzo della segreteria]</p>
-      </div>
-
-      <!--
-        MODULO: per ricevere i messaggi via email senza server, crea un modulo gratuito su
-        https://formspree.io e incolla qui sotto l'URL in "action" (es. https://formspree.io/f/abcdwxyz).
-        Finché action resta vuoto, il pulsante apre il programma di posta del visitatore.
-      -->
-      <form class="contact-form" id="contact-form" action="" method="POST" data-mailto="info@example.com">
-        <label for="nome">Nome e cognome</label>
-        <input type="text" id="nome" name="nome" required autocomplete="name">
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required autocomplete="email">
-
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" name="messaggio" rows="4" required></textarea>
-
-        <label class="check">
-          <input type="checkbox" name="privacy" required>
-          <span>Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e acconsento al trattamento dei dati.</span>
-        </label>
-
-        <button type="submit" class="btn btn-primary">Invia richiesta</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
