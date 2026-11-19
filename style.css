@@ -208,7 +208,7 @@ main > .section:last-child { border-bottom: 0; }
   border: 1px solid var(--burgundy); padding: 8px 22px;
 }
 .gallery-tabs a[aria-current="page"], .gallery-tabs a:hover { background: var(--burgundy); color: var(--cream); }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px 24px; align-items: start; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 360px)); justify-content: center; gap: 32px 24px; align-items: start; }
 .gallery-card { margin: 0; display: flex; flex-direction: column; }
 .gallery-card figcaption { font-variant-numeric: lining-nums; font-family: var(--serif); font-size: 16.5px; line-height: 1.4; color: var(--text); margin-top: 10px; }
 .gallery-item { display: block; overflow: hidden; border: 1px solid var(--border); background: var(--beige); }
