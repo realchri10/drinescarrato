@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galleria video – Dr. Ines Carrato MD</title>
+  <meta name="description" content="Video della Dr. Ines Carrato e della Segreteria Eventi.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGAZIONE -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/stemma.png" alt="" class="brand-logo">
+        <span class="brand-name">Dr. Ines Carrato</span>
+        <span class="brand-sep"></span>
+        <span class="brand-md">MD</span>
+      </a>
+      <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+            <nav class="nav-links">
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="eventi.html">Eventi</a>
+        <div class="nav-dropdown">
+          <button type="button" class="nav-drop-toggle is-current" aria-expanded="false" aria-controls="menu-galleria">Galleria <span class="caret" aria-hidden="true"></span></button>
+          <div class="nav-submenu" id="menu-galleria">
+            <a href="galleria-immagini.html">Immagini</a>
+            <a href="galleria-video.html" aria-current="page">Video</a>
+          </div>
+        </div>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <section class="section gallery-page">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Galleria</p>
+        <h2>Video</h2>
+        <div class="rule center"></div>
+        <div class="gallery-tabs" role="navigation" aria-label="Galleria">
+          <a href="galleria-immagini.html">Immagini</a>
+          <a href="galleria-video.html" aria-current="page">Video</a>
+        </div>
+      </div>
+
+      <!--
+        Per aggiungere un video di YouTube copia questo blocco dentro .video-grid
+        e sostituisci ID_VIDEO con il codice del video (la parte dopo "v=" nell'indirizzo):
+
+        <figure class="video-item">
+          <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/ID_VIDEO" title="Titolo del video" loading="lazy" allowfullscreen></iframe></div>
+          <figcaption>Titolo del video</figcaption>
+        </figure>
+
+        Per un video caricato sul sito (file .mp4 nella cartella assets/video):
+
+        <figure class="video-item">
+          <div class="video-frame"><video src="assets/video/nome-file.mp4" controls preload="metadata"></video></div>
+          <figcaption>Titolo del video</figcaption>
+        </figure>
+      -->
+      <div class="video-grid">
+      </div>
+      <p class="gallery-empty">I video saranno pubblicati a breve.</p>
+    </div>
+  </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><em>Dr. Ines Carrato</em> <span class="small-caps">| MD</span> · <em>Segreteria Eventi</em></p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="cookie.html">Cookie policy</a>
+        <span>© <span id="year">2026</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
