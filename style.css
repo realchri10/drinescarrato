@@ -216,10 +216,26 @@ main > .section:last-child { border-bottom: 0; }
 .gallery-item:hover img { transform: scale(1.03); }
 .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
 .video-grid:empty { display: none; }
-.video-grid:not(:empty) + .gallery-empty { display: none; }
+.video-grid:not(:empty) + .reel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 360px)); justify-content: center; gap: 28px; align-items: start; }
+.reel { min-width: 0; }
+.reel .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
+.reel blockquote.instagram-media { background: var(--burgundy); border: 1px solid var(--border); aspect-ratio: 9 / 16; display: flex; padding: 0; }
+.reel-fallback { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: var(--cream); text-decoration: none; font-family: var(--serif); font-size: 19px; }
+.reel-play { width: 64px; height: 64px; border: 1.5px solid var(--cream); border-radius: 50%; position: relative; }
+.reel-play::after { content: ""; position: absolute; left: 26px; top: 20px; border-left: 16px solid var(--cream); border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+.reel-fallback:hover .reel-play { background: rgba(245,237,224,.12); }
+.gallery-empty { display: none; }
 .video-item figcaption { font-family: var(--serif); font-size: 18px; color: var(--burgundy); margin-top: 10px; }
 .video-frame { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); }
 .video-frame iframe, .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.reel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width: 1052px; margin: 0 auto; gap: 28px; align-items: start; }
+.reel { min-width: 0; }
+.reel .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
+.reel blockquote.instagram-media { background: var(--burgundy); border: 1px solid var(--border); aspect-ratio: 9 / 16; display: flex; padding: 0; }
+.reel-fallback { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: var(--cream); text-decoration: none; font-family: var(--serif); font-size: 19px; }
+.reel-play { width: 64px; height: 64px; border: 1.5px solid var(--cream); border-radius: 50%; position: relative; }
+.reel-play::after { content: ""; position: absolute; left: 26px; top: 20px; border-left: 16px solid var(--cream); border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+.reel-fallback:hover .reel-play { background: rgba(245,237,224,.12); }
 .gallery-empty { text-align: center; font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--muted); padding: 40px 0; }
 
 .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(25,8,12,.97); display: flex; align-items: center; justify-content: center; padding: 24px; }
