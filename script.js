@@ -55,6 +55,62 @@ if (lb) {
   });
 }
 
+// Video di Instagram: caricati solo dopo il consenso del visitatore
+const CONSENT_KEY = 'consenso-instagram';
+const consent = {
+  get() { try { return localStorage.getItem(CONSENT_KEY) === 'si'; } catch { return false; } },
+  set(v) { try { v ? localStorage.setItem(CONSENT_KEY, 'si') : localStorage.removeItem(CONSENT_KEY); } catch {} }
+};
+let igScript;
+function loadInstagram() {
+  if (window.instgrm) { window.instgrm.Embeds.process(); return; }
+  if (igScript) return;
+  igScript = document.createElement('script');
+  igScript.src = 'https://www.instagram.com/embed.js';
+  igScript.async = true;
+  igScript.onload = () => window.instgrm && window.instgrm.Embeds.process();
+  document.body.appendChild(igScript);
+}
+function showReel(box) {
+  if (box.dataset.loaded) return;
+  box.dataset.loaded = '1';
+  const url = 'https://www.instagram.com/reel/' + box.dataset.reel + '/';
+  box.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="' + url + '" data-instgrm-version="14">' +
+    '<a href="' + url + '" target="_blank" rel="noopener" class="reel-loading">Caricamento del video…</a></blockquote>';
+}
+const reels = document.querySelectorAll('.reel[data-reel]');
+if (reels.length) {
+  const bar = document.querySelector('.reel-consent-bar');
+  const loadAll = () => { reels.forEach(showReel); loadInstagram(); if (bar) bar.hidden = true; };
+  if (consent.get()) {
+    loadAll();
+  } else {
+    if (bar) bar.hidden = false;
+    reels.forEach(box => box.querySelector('.reel-load').addEventListener('click', () => {
+      consent.set(true);
+      loadAll();
+    }));
+    const all = document.querySelector('.reel-load-all');
+    if (all) all.addEventListener('click', () => { consent.set(true); loadAll(); });
+  }
+}
+
+// Pagina cookie: stato e revoca del consenso
+const consentBox = document.querySelector('.consent-status');
+if (consentBox) {
+  const txt = consentBox.querySelector('.consent-text');
+  const btn = consentBox.querySelector('.consent-revoke');
+  const render = () => {
+    const on = consent.get();
+    txt.textContent = on
+      ? 'Hai acconsentito al caricamento dei video di Instagram su questo dispositivo.'
+      : 'Non hai acconsentito al caricamento dei video di Instagram: i video non vengono caricati finché non clicchi su uno di essi.';
+    btn.hidden = !on;
+  };
+  btn.addEventListener('click', () => { consent.set(false); render(); });
+  render();
+}
+
 // Anno nel footer
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();

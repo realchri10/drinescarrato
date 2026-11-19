@@ -8,9 +8,6 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -56,40 +53,49 @@
       </div>
 
       <!--
-        Per aggiungere un reel di Instagram copia un blocco <div class="reel"> qui sotto
-        e sostituisci il codice del reel (la parte dopo /reel/ nell'indirizzo) nei due punti in cui compare.
+        I video di Instagram si caricano solo dopo il clic del visitatore (consenso ai cookie di terze parti).
+        Per aggiungere un reel copia un blocco <div class="reel" data-reel="…"> qui sotto e sostituisci
+        il codice del reel (la parte dopo /reel/ nell'indirizzo) nei punti in cui compare.
       -->
+      <div class="reel-consent-bar" hidden>
+        <p>I video sono ospitati su Instagram e si caricano solo con il tuo consenso.</p>
+        <button type="button" class="btn btn-primary reel-load-all">Carica tutti i video</button>
+      </div>
       <div class="reel-grid">
-        <div class="reel">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZpyJ7zo63q/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/reel/DZpyJ7zo63q/" target="_blank" rel="noopener" class="reel-fallback">
+        <div class="reel" data-reel="DZpyJ7zo63q">
+          <div class="reel-consent">
+            <button type="button" class="reel-load" aria-label="Carica il video 1 da Instagram">
               <span class="reel-play" aria-hidden="true"></span>
-              <span>Guarda il reel su Instagram</span>
-            </a>
-          </blockquote>
+              <span class="reel-load-label">Carica il video</span>
+            </button>
+            <p>Il video è ospitato su Instagram. Cliccando, accetti che Instagram (Meta) possa installare cookie e raccogliere dati di navigazione. <a href="cookie.html#instagram">Maggiori informazioni</a></p>
+            <a href="https://www.instagram.com/reel/DZpyJ7zo63q/" target="_blank" rel="noopener" class="reel-ext">Oppure guardalo su Instagram ↗</a>
+          </div>
         </div>
-        <div class="reel">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQl6AXBjDPG/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/reel/DQl6AXBjDPG/" target="_blank" rel="noopener" class="reel-fallback">
+        <div class="reel" data-reel="DQl6AXBjDPG">
+          <div class="reel-consent">
+            <button type="button" class="reel-load" aria-label="Carica il video 2 da Instagram">
               <span class="reel-play" aria-hidden="true"></span>
-              <span>Guarda il reel su Instagram</span>
-            </a>
-          </blockquote>
+              <span class="reel-load-label">Carica il video</span>
+            </button>
+            <p>Il video è ospitato su Instagram. Cliccando, accetti che Instagram (Meta) possa installare cookie e raccogliere dati di navigazione. <a href="cookie.html#instagram">Maggiori informazioni</a></p>
+            <a href="https://www.instagram.com/reel/DQl6AXBjDPG/" target="_blank" rel="noopener" class="reel-ext">Oppure guardalo su Instagram ↗</a>
+          </div>
         </div>
-        <div class="reel">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfPaQ14Idae/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/reel/DfPaQ14Idae/" target="_blank" rel="noopener" class="reel-fallback">
+        <div class="reel" data-reel="DfPaQ14Idae">
+          <div class="reel-consent">
+            <button type="button" class="reel-load" aria-label="Carica il video 3 da Instagram">
               <span class="reel-play" aria-hidden="true"></span>
-              <span>Guarda il reel su Instagram</span>
-            </a>
-          </blockquote>
+              <span class="reel-load-label">Carica il video</span>
+            </button>
+            <p>Il video è ospitato su Instagram. Cliccando, accetti che Instagram (Meta) possa installare cookie e raccogliere dati di navigazione. <a href="cookie.html#instagram">Maggiori informazioni</a></p>
+            <a href="https://www.instagram.com/reel/DfPaQ14Idae/" target="_blank" rel="noopener" class="reel-ext">Oppure guardalo su Instagram ↗</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
   </main>
-
-  <script async src="https://www.instagram.com/embed.js"></script>
 
   <!-- FOOTER -->
   <footer class="footer">
