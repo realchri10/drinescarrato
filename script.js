@@ -135,15 +135,32 @@ if (form) {
       return;
     }
 
-    // Invio tramite servizio esterno (es. Formspree)
+    // Invio diretto tramite FormSubmit
+    const btn = form.querySelector('button[type="submit"]');
+    const mail = form.dataset.mailto;
+    const fail = (msg) => {
+      status.className = 'form-status is-error';
+      status.innerHTML = (msg || 'Non è stato possibile inviare il messaggio.') +
+        ' Puoi scriverci direttamente a <a href="mailto:' + mail + '">' + mail + '</a>.';
+    };
+    status.className = 'form-status';
     status.textContent = 'Invio in corso…';
+    btn.disabled = true;
     try {
-      const res = await fetch(action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error();
+      const res = await fetch(action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data))
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || String(out.success) !== 'true') throw new Error(out.message || '');
       form.reset();
-      status.textContent = 'Grazie! La tua richiesta è stata inviata.';
-    } catch {
-      status.textContent = 'Si è verificato un errore. Riprova o scrivici via email.';
+      status.className = 'form-status is-ok';
+      status.textContent = 'Grazie! La tua richiesta è stata inviata: ti risponderemo al più presto.';
+    } catch (err) {
+      fail();
+    } finally {
+      btn.disabled = false;
     }
   });
 }

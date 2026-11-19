@@ -56,7 +56,14 @@
         https://formspree.io e incolla qui sotto l'URL in "action" (es. https://formspree.io/f/abcdwxyz).
         Finché action resta vuoto, il pulsante apre il programma di posta del visitatore.
       -->
-      <form class="contact-form" id="contact-form" action="" method="POST" data-mailto="segreteria.eventi.dr.ines.c@gmail.com">
+      <!--
+        Il modulo invia i messaggi tramite FormSubmit (formsubmit.co) all'indirizzo della segreteria.
+        Alla prima richiesta FormSubmit manda all'indirizzo una mail di attivazione: va confermata una sola volta.
+      -->
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/ajax/segreteria.eventi.dr.ines.c@gmail.com" method="POST" data-mailto="segreteria.eventi.dr.ines.c@gmail.com">
+        <input type="hidden" name="_subject" value="Nuova richiesta dal sito drinescarrato.it">
+        <input type="hidden" name="_template" value="table">
+        <div class="hp" aria-hidden="true"><label>Non compilare questo campo <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
         <label for="nome">Nome e cognome</label>
         <input type="text" id="nome" name="nome" required autocomplete="name">
 
@@ -67,7 +74,7 @@
         <textarea id="messaggio" name="messaggio" rows="4" required></textarea>
 
         <label class="check">
-          <input type="checkbox" name="privacy" required>
+          <input type="checkbox" name="privacy" value="Sì, consenso al trattamento dei dati" required>
           <span>Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e acconsento al trattamento dei dati.</span>
         </label>
 

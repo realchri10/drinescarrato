@@ -274,6 +274,7 @@ main > .section:last-child { border-bottom: 0; }
 .contact-info a { text-decoration: none; }
 .contact-info a:hover { text-decoration: underline; }
 .contact-form {
+  position: relative;
   background: var(--cream-light); border: 1px solid var(--border);
   padding: 28px 16px 24px; display: flex; flex-direction: column;
 }
@@ -291,7 +292,13 @@ main > .section:last-child { border-bottom: 0; }
 .contact-form .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 11.5px; margin: 0 0 16px; cursor: pointer; }
 .contact-form .check input { margin-top: 2px; accent-color: var(--burgundy); width: 14px; height: 14px; flex-shrink: 0; }
 .contact-form .btn { align-self: flex-start; }
-.form-status { font-size: 13px; margin-top: 12px; color: var(--burgundy); min-height: 1em; }
+.form-status { font-size: 13.5px; margin-top: 14px; color: var(--burgundy); min-height: 1em; }
+.form-status:empty { margin: 0; }
+.form-status.is-ok { padding: 12px 14px; background: #eef3e8; border: 1px solid #c9d8b8; color: #3d5a2a; }
+.form-status.is-error { padding: 12px 14px; background: #f8ecec; border: 1px solid #e3c4c4; }
+.form-status a { color: inherit; font-weight: 600; }
+.contact-form .btn:disabled { opacity: .6; cursor: wait; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--burgundy); color: var(--cream); padding: 30px 0; font-size: 12px; }
