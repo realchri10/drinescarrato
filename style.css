@@ -225,6 +225,8 @@ main > .section:last-child { border-bottom: 0; }
 .gallery-card figcaption { font-variant-numeric: lining-nums; font-family: var(--serif); font-size: 16.5px; line-height: 1.4; color: var(--text); margin-top: 10px; }
 .gallery-item { display: block; overflow: hidden; border: 1px solid var(--border); background: var(--beige); }
 .gallery-item img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .4s; }
+.gallery-grid:has(> .gallery-card:only-child) { grid-template-columns: minmax(0, 760px); }
+.gallery-card:only-child .gallery-item img { aspect-ratio: auto; }
 .gallery-item:hover img { transform: scale(1.03); }
 .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
 .video-grid:empty { display: none; }
